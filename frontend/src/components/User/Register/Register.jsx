@@ -39,11 +39,11 @@ function Register() {
   const postUrl = "https://valuenable.onrender.com/users/create";
 
   const register = (values) => {
-    console.log(values);
+    // console.log(values);
     axios
       .post(postUrl, values)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setMsg(res.data.message);
       })
       .catch((err) => {

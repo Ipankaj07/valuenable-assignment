@@ -32,11 +32,11 @@ function Login() {
   const postUrl = "https://valuenable.onrender.com/users/login";
 
   const login = (values) => {
-    console.log(values);
+    // console.log(values);
     axios
       .post(postUrl, values)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setMsg(res.data.message);
         localStorage.setItem("name", res.data.name);
       })
