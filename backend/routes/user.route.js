@@ -6,15 +6,6 @@ const credentialFields = require("../middlewares/credential.middleware");
 
 const userRouter = Router();
 
-userRouter.get("/", async (req, res) => {
-  try {
-    const users = await UserModel.find();
-    res.json({ users });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
 userRouter.post("/create", credentialFields, async (req, res) => {
   try {
     const { name, email, mobile, password } = req.body;
@@ -42,18 +33,6 @@ userRouter.post("/create", credentialFields, async (req, res) => {
         });
       }
     });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-userRouter.get("/:id", async (req, res) => {
-  try {
-    const user = await UserModel.findById(req.params.id);
-    if (!user) {
-      return res.status(404).json({ error: "User not found" });
-    }
-    res.json({ user });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
