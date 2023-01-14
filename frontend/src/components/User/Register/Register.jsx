@@ -36,7 +36,7 @@ const validationSchema = Yup.object({
 function Register() {
   const [msg, setMsg] = React.useState("");
 
-  const postUrl = "http://localhost:8080/users/create";
+  const postUrl = "https://valuenable.onrender.com/users/create";
 
   const register = (values) => {
     console.log(values);
